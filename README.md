@@ -1,11 +1,11 @@
-# bufr_filter_gts (BFG)
+# bufr_filter_gts
 A python3 toolbox for filtering GTS messages in BUFR format
 
 This toolbox implements a simple python3 module for filtering BUFR-synop messages from GTS into single BUFR files, taking into account all duplications, corrections etc. It is based on the python module *eccodes*.
 
-Alex Deckmyn, 2020
-Royal Meteorological Institute
-alex.deckmyn@meteo.be
+Alex Deckmyn, 2020  
+Royal Meteorological Institute  
+alex.deckmyn@meteo.be  
 
 This repository contains
 1. a python3 module bufr_filter_gts which should made available to python
@@ -23,8 +23,8 @@ in this function, you may need to adapt the directory structure for GTS input.
 At RMI, it is organised in hourly directories "YYYYMMDDHH"
 (this is the time that the GTS message arrives and may be quite different from the date to which it refers internally!)
 Just look for the *newdir* and *gtsdir* lines.
-- Default is to create HOURLY BUFR FILES ([time - 29', time+30'])
-You can modify the window size *obs_window_size=60* in the main call to *update_sqlite()*. 
+- Default is to create *hourly BUFR files* ([time - 29', time+30'])
+You can modify the window size *obs_window_size=60* in the main call to *update_sqlite()* (see example).
 But to change the centering, you will have to modify the function **obs_window()**.
 - The function **gts_filter(gtsheader)** is a first filter based simply on GTS headers. It limits the number of files that are actually parsed. By default, it keeps only those marked as BUFR-SYNOP (*TT = IS*) for Europe, Northern hemisphere etc. (*AA[1] in (A, D, N, X)*). This may need to be changed if you want e.g. observations over Africa, Asia...
 
