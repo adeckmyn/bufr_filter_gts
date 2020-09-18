@@ -11,21 +11,7 @@ import datetime as dt
 import os
 import sqlite3
 
-#import pandas
-# TODO: probably (a bit) faster if you assume the file name formats
-#       then you can filter directly on mindate/maxdate without decoding
-#       exporting the BUFR subsets is rather slow... Create hourly files in parallel?
-
-# GTS_path = "/mnt/afd_shelf/observations/bufrsynops"
-#GTS_path = "/data/DASK/BUFR/GTS"
-#SQL_path = "/data/DASK/BUFR/sqlite"
-#BUFR_path = "/data/DASK/BUFR/merge"
-
-#scan_interval = dt.timedelta(minutes=15)
-#testdate = dt.datetime(2018, 03, 01, 0,0)
-
-# time window: e.g. 21:00 -- 02:59
-# for CANARI: only use observations at exact time
+# time window: e.g. 19:30 -- 20:29
 def obs_window(cycledate, nmin=30) :
   return(cycledate - dt.timedelta(hours=0, minutes=nmin-1),
          cycledate + dt.timedelta(hours=0, minutes=nmin))
