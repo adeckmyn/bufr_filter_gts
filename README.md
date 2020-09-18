@@ -7,8 +7,6 @@ Alex Deckmyn, 2020
 Royal Meteorological Institute
 alex.deckmyn@meteo.be
 
-This software is distributed under the Apache license (>=2.0)
-
 This repository contains
 1. a python3 module bufr_filter_gts which should made available to python
    - PYTHONPATH=<.../bufr_filter_gts/module>
@@ -29,3 +27,18 @@ Just look for the *newdir* and *gtsdir* lines.
 You can modify the window size *obs_window_size=60* in the main call to *update_sqlite()*. 
 But to change the centering, you will have to modify the function **obs_window()**.
 
+---
+
+Copyright 2020 Alex Deckmyn (Royal Meteorological Institute)
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
