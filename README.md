@@ -17,7 +17,7 @@ This repository contains
 CONFIGURATION:
 --------------
 
-You will probably have to modify a few routines in /synop_extractor.py/, depending how incoming GTS data is stored.
+You will probably have to modify a few routines in **synop_extractor.py**, depending on how incoming GTS data is stored, the time window and the general location of observations.
 - **update_sqlite()** :
 in this function, you may need to adapt the directory structure for GTS input. 
 At RMI, it is organised in hourly directories "YYYYMMDDHH"
@@ -26,6 +26,7 @@ Just look for the *newdir* and *gtsdir* lines.
 - Default is to create HOURLY BUFR FILES ([time - 29', time+30'])
 You can modify the window size *obs_window_size=60* in the main call to *update_sqlite()*. 
 But to change the centering, you will have to modify the function **obs_window()**.
+- The function **gts_filter(gtsheader)** is a first filter based simply on GTS headers. It limits the number of files that are actually parsed. By default, it keeps only those marked as BUFR-SYNOP (*TT = IS*) for Europe, Northern hemisphere etc. (*AA[1] in (A, D, N, X)*). This may need to be changed if you want e.g. observations over Africa, Asia...
 
 ---
 
