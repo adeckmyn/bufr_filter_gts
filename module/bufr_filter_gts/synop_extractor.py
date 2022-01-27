@@ -329,7 +329,7 @@ def update_sqlite(cycle_date, SQL_path, GTS_path, obs_window_size=60) :
       if current > dt.datetime.utcnow() :
          print("Directory " + newdir +" doesn't exist yet.")
          break
-       else :
+      else :
          print("Directory " + newdir +" doesn't exist.")
          continue
 
